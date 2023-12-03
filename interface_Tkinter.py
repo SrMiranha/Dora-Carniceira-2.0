@@ -6,8 +6,8 @@ class game:
     def __init__(self, master=None):
       self.master = master 
       self.master.title('Dora carniceira')
-      self.imagem = tk.PhotoImage(file="imagens_do_tkinter/Dora carniceira.png")
-      self.label = tk.Label(self.master, image=self.imagem)
+      self.imagem = PhotoImage(file="imagens_do_tkinter/Dora carniceiraa.png")
+      self.label = Label(self.master, image=self.imagem)
       self.label.imagem = self.imagem
       self.label.place(x = 800,  y = 600)
       
@@ -26,6 +26,6 @@ class game:
 
 
 
-root = tk.Tk()
+root = Tk()
 game(root)
 root.mainloop()

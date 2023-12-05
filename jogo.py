@@ -1,5 +1,7 @@
 from tkinter import *
 import tkinter as tk
+import sys
+import os
 
 root=Tk()
 
@@ -17,36 +19,35 @@ class configuração():
 
 def janela02():
     import niveis
+    root.withdraw()
+    #iamgem do botao voltar
+    imagem_voltar = PhotoImage(file='imagens_do_tkinter/botao menu.png', master=niveis.root2)
+    imagem_voltar= imagem_voltar.subsample(1,1)
+    botao_voltar = Label(niveis.root2, image=imagem_voltar)
+    botao_voltar.image = imagem_voltar
 
-
-
-
-
-
-
-# def Janela_niveis():
-#     root2= tk.Toplevel()
-#     root2.title("NÍVEIS DE JOGO")
-#     root2.geometry('1076x717')
-#     root2.resizable(True,True)
-#     imagem_niveis = tk.PhotoImage( file="imagens_do_tkinter/niveis.png", master=root2)
-#     imagem__niveis = tk.Label(root2, image=imagem_niveis).pack()
+    #Botao para voltar pro menu
+    botao_voltar_menu=Button(niveis.root2, image=imagem_voltar, command= lambda:voltar_pro_menu())
+    botao_voltar_menu.place(x = 900, y = 550)
     
-#     root2.mainloop
-        
-    
+    # função que retorna pro menu
+    def voltar_pro_menu():
+        niveis.root2.destroy()
+        jogo= sys.executable
+        os.execl(jogo,jogo, * sys.argv)
 
 #imagem do menu
 imagem_menu = PhotoImage( file="imagens_do_tkinter/Dora carniceiraa.png", master=root)
 imagem__menu = Label(root, image=imagem_menu).pack()
 
 #botao do menu (start)
-imagem_start = PhotoImage(file='imagens_do_tkinter/botao menu.png')
+imagem_start = PhotoImage(file='imagens_do_tkinter/start.png')
 imagem_start = imagem_start.subsample(1,1)
 botao_start = Label(root, image=imagem_start)
 botao_start.image = imagem_start
 
-botao = Button (root,image=imagem_start, command = janela02)
-botao.place(x = 200, y = 500)
+botao_menu = Button (root,image=imagem_start, command = janela02)
+botao_menu.place(x = 200, y = 500)
+
 
 configuração()

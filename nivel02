@@ -1,0 +1,142 @@
+
+from random import randint
+import nivel01
+class Animal:#superclasse
+    def __init__ (self,nome,força,posição_x,posição_y):#atributos
+        self.nome=str(nome)  #O nome em maiusculo é o nome da variavel (atributo)
+        self.força=int(força)
+        self.posição_x=int(posição_x)
+        self.posição_y=int(posição_y)
+
+    def setNome(self,nomemudou):
+        self.nome=nomemudou
+
+    def setforça(self,forçamudou):
+        self.força=forçamudou
+
+    def setPosição_x(self,posição_xmudou):
+        self.posição_x=posição_xmudou
+
+    def setPosição_y(self,posição_ymudou):
+        self.posição_y=posição_ymudou
+    
+    def getNome(self):
+        return self.nome
+
+    def getForça(self):
+        return self.força
+
+    def getPosição_x(self):
+        return self.posição_x
+
+    def getPosição_y(self):
+        return self.posição_y
+
+class PorcoEspinho(Animal):
+    def __init__ (self,nome,força,posição_x,posição_y,posição_x2,posição_y2,raça):
+        super(). __init__ (nome,força,posição_x,posição_y)
+        self.posição_x2=int(posição_x2)
+        self.posição_y2=int(posição_y2)
+        self.raça= str(raça)
+        def setPosição_x(self,posição_xmudou):
+            self.posição_x2 = posição_x2mudou
+
+        def setPosição_y(self,posição_ymudou):
+            self.posição_y2=posição_y2mudou
+        
+        def getPosição_2x(self):
+            return self.posição_x2
+
+        def getPosição_2y(self):
+            return self.posição_y2
+
+        def getRaça(self):
+            return self.raça
+
+        def setRaça(self,Raçamudou):
+            self.raça=Raçamudou
+
+#atributos dos novos animais
+porquinho= PorcoEspinho ('Porquinho José',2,50,25,410,340,'Porco espinho')
+#imagens
+# doraimagem = pygame.image.load('imagens_do_pygame/dora.sem.fundo.png')
+# botasimagem = pygame.image.load('imagens_do_pygame/botas.sem.fundo.png')
+# leaoimagem = pygame.image.load('imagens_do_pygame/leao.direita.png')
+# vacaimagem = pygame.image.load('imagens_do_pygame/vaca.esquerda.png')
+# galinhaimagem = pygame.image.load('imagens_do_pygame/galinha.direita.png')
+# gatoimagem = pygame.image.load('imagens_do_pygame/gato1.png')
+# cachorroimagem = pygame.image.load('imagens_do_pygame/dog1.png')
+# raposoimagem = pygame.image.load('imagens_do_pygame/raposo1.png')
+porquinhoimagem = pygame.image.load('imagens_do_pygame/porquinho1.png')
+
+# #posicoes dos animais 
+# x=dora.posição_x
+# y=dora.posição_y
+# xbotas=botas.posição_x
+# ybotas=botas.posição_y
+# xleao= leao.posição_x
+# yleao= leao.posição_y
+# xvaca= vaca.posição_x
+# yvaca=vaca.posição_y
+# xgalinha=galinha.posição_x
+# ygalinha=galinha.posição_y
+# xgato=gato.posição_x
+# ygato=gato.posição_y
+# xdog=cachorro.posição_x
+# ydog=cachorro.posição_y
+# xraposo=raposo.posição_x
+# yraposo=raposo.posição_y
+# xporquinho = porquinho.posição_x
+# yporquinho = porquinho.posição_y
+xporquinho= randint (porquinho.posição_x,porquinho.posição_x2)
+yporquinho = randint (porquinho.posição_y, porquinho.posição_y2)
+
+
+
+#
+
+# mraposo = f'Força do {raposo.nome}:{raposo.força}'
+# textraposo = fonte2.render(mraposo, True,(255,255,255))
+
+# mgato = f'Força do {gato.nome}:{gato.força}'
+# textgato = fonte2.render(mgato, True,(255,255,255))
+
+# mvaca = f'Força da {vaca.nome}:{vaca.força}'
+# textvaca = fonte2.render(mvaca, True,(255,255,255))
+
+# mdog = f'Força do {cachorro.nome}:{cachorro.força}'
+# textdog = fonte2.render(mdog, True,(255,255,255))
+
+# mleao = f'Força do {leao.nome}:{leao.força}'
+# textleao = fonte2.render(mleao, True,(255,255,255))
+
+# mgalinha = f'Força da {galinha.nome}:{galinha.força}'
+# textgalinha = fonte2.render(mgalinha, True,(255,255,255))
+m = f'Força da {porquinho.nome}: {porquinho.força}'
+textporquinho = fonte2.render(mporquinho, True,(255,255,255))
+# pontos=dora.força
+    
+#     #textos
+#     janela.blit(fundo,(0,0))
+#     janela.blit(texto_formatado,(600,40))
+#     janela.blit(textraposo,(600,100))
+#     janela.blit(textgato,(600,140))
+#     janela.blit(textleao,(600,180))
+#     janela.blit(textvaca,(600,220))
+#     janela.blit(textdog,(600,260))
+#     janela.blit(textgalinha,(600,300))
+
+
+#     #imagens
+#     janela.blit(doraimagem,(x,y))
+#     janela.blit(botasimagem,(xbotas,ybotas))
+#     janela.blit(leaoimagem,(xleao,yleao))
+#     janela.blit(vacaimagem,(xvaca,yvaca))
+#     janela.blit(galinhaimagem,(xgalinha,ygalinha))
+#     janela.blit(gatoimagem,(xgato,ygato))
+#     janela.blit(cachorroimagem,(xdog,ydog))
+#     janela.blit(raposoimagem,(xraposo,yraposo))
+janela.blit(porquinhoimagem,(xporquinho,yporquinho))
+#     pygame.display.update()
+
+# pygame.quit()

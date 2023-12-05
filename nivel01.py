@@ -110,29 +110,29 @@ class Botas (Animal):
 
     def setRaça(self,Raçamudou):
             self.raça=Raçamudou 
-# class PorcoEspinho(Animal):
-#     def __init__ (self,nome,força,posição_x,posição_y,posição_x2,posição_y2,raça):
-#         super(). __init__ (nome,força,posição_x,posição_y)
-#         self.posição_x2=int(posição_x2)
-#         self.posição_y2=int(posição_y2)
-#         self.raça= str(raça)
-#         def setPosição_x(self,posição_xmudou):
-#             self.posição_x2 = posição_x2mudou
+class PorcoEspinho(Animal):
+    def __init__ (self,nome,força,posição_x,posição_y,posição_x2,posição_y2,raça):
+        super(). __init__ (nome,força,posição_x,posição_y)
+        self.posição_x2=int(posição_x2)
+        self.posição_y2=int(posição_y2)
+        self.raça= str(raça)
+        def setPosição_x(self,posição_xmudou):
+            self.posição_x2 = posição_x2mudou
 
-#         def setPosição_y(self,posição_ymudou):
-#             self.posição_y2=posição_y2mudou
+        def setPosição_y(self,posição_ymudou):
+            self.posição_y2=posição_y2mudou
         
-#         def getPosição_2x(self):
-#             return self.posição_x2
+        def getPosição_2x(self):
+            return self.posição_x2
 
-#         def getPosição_2y(self):
-#             return self.posição_y2
+        def getPosição_2y(self):
+            return self.posição_y2
 
-#         def getRaça(self):
-#             return self.raça
+        def getRaça(self):
+            return self.raça
 
-#         def setRaça(self,Raçamudou):
-#             self.raça=Raçamudou
+        def setRaça(self,Raçamudou):
+            self.raça=Raçamudou
 
 
 
@@ -147,7 +147,7 @@ galinha = Galinha ('Galinha Margarete',5,370,230,'Galinha Caipira')
 botas = Botas ('Botas',0,32,5,'Macaco Botas')
 raposo = Raposo ('Raposo',100,80,10,'Raposo')
 dora = Doraa ('Dora',10,430,15)
-# porquinho= PorcoEspinho ('Porquinho José',2,50,25,410,340,'Porco espinho')
+porquinho= PorcoEspinho ('Porquinho José',2,50,25,410,340,'Porco espinho')
 
 
 import pygame
@@ -170,7 +170,7 @@ galinhaimagem = pygame.image.load('imagens_do_pygame/galinha.direita.png')
 gatoimagem = pygame.image.load('imagens_do_pygame/gato1.png')
 cachorroimagem = pygame.image.load('imagens_do_pygame/dog1.png')
 raposoimagem = pygame.image.load('imagens_do_pygame/raposo1.png')
-# porquinhoimagem = pygame.image.load('imagens_do_pygame/porquinho1.png')
+porquinhoimagem = pygame.image.load('imagens_do_pygame/porquinho1.png')
 
 #posicoes dos animais 
 x=dora.posição_x
@@ -189,8 +189,8 @@ xdog=cachorro.posição_x
 ydog=cachorro.posição_y
 xraposo=raposo.posição_x
 yraposo=raposo.posição_y
-# xporquinho= randint (porquinho.posição_x,porquinho.posição_x2)
-# yporquinho = randint (porquinho.posição_y, porquinho.posição_y2)
+xporquinho= randint (porquinho.posição_x,porquinho.posição_x2)
+yporquinho = randint (porquinho.posição_y, porquinho.posição_y2)
 
 
 
@@ -433,7 +433,7 @@ while janelaaberta:
     janela.blit(gatoimagem,(xgato,ygato))
     janela.blit(cachorroimagem,(xdog,ydog))
     janela.blit(raposoimagem,(xraposo,yraposo))
-    # janela.blit(porquinhoimagem,(xporquinho,yporquinho))
+    janela.blit(porquinhoimagem,(xporquinho,yporquinho))
     pygame.display.update()
 
 pygame.quit()

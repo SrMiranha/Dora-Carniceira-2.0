@@ -58,8 +58,13 @@ class Estrelinha(Animal):
         self.posição_x4=int(posição_x4)
         self.posição_y4=int(posição_y4)
 class PorcoEspinho(Animal):
-    def __init__ (self,nome,força,posição_x,posição_y,posição_x2,posição_y2):
+    def __init__ (self,nome,força,posição_x,posição_y,posição_x2,posição_y2, ):
         super(). __init__ (nome,força,posição_x,posição_y)
+        self.posição_x2=int(posição_x2)
+        self.posição_y2=int(posição_y2)  
+class espinho(Animal):
+     def __init__ (self,nome,força,posição_x,posição_y,posição_x2,posição_y2):
+        super(). __init__ (nome,força,posição_x,posição_y,)
         self.posição_x2=int(posição_x2)
         self.posição_y2=int(posição_y2)  
 
@@ -224,6 +229,7 @@ while janelaaberta:
                 y4estrelinha=4000
                 doraimagem=pygame.image.load('imagens_do_pygame/dora6.png')
                 game_over()
+    
     #casos porquinho2
     if  (x-80 < x2porquinho and y+80 > y2porquinho and y-80 < y2porquinho):
         doraimagem= pygame.image.load('imagens_do_pygame/dora4.png')

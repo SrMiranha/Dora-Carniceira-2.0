@@ -3,6 +3,7 @@ from tkinter import *
 import tkinter as tk
 import sys
 import os
+from niveis import retornar_niveis
 
 root_go=Tk()
 
@@ -16,11 +17,6 @@ class configuraçãoGO():
         self.root_go.title('NÍVEIS DE JOGO')
         self.root_go.geometry('1076x717')
         self.root_go.resizable(True,True)
-
-def retornar_niveis():
-    root_go.withdraw()
-    niveis= sys.executable
-    os.execl(niveis,niveis, * sys.argv)
 
 imagem_game_over = PhotoImage( file="imagens_do_tkinter/game over.png", master=root_go)
 imagem__game_over = Label(root_go, image=imagem_game_over).pack()

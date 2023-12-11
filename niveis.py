@@ -1,17 +1,26 @@
 from tkinter import *
 import tkinter as tk
+import sys
+import os
+
 
 root2=Tk()
 
 def nivel1():
     import nivel01
-    root2.withdraw()
+    root2.destroy()
+    
+
+def retornar_niveis():
+    niveis= sys.executable
+    os.execl(niveis,niveis, * sys.argv)
+
 class configuração2():
     def __init__(self, master=None):
         self.master = master
         self.root2 = root2
         self.tela2()
-        
+        root2.mainloop
     def tela2(self):
         self.root2.title('NÍVEIS DE JOGO')
         self.root2.geometry('1076x717')

@@ -14,114 +14,44 @@ class Animal:#superclasse
         self.posição_x=int(posição_x)
         self.posição_y=int(posição_y)
 
-    def setNome(self,nomemudou):
-        self.nome=nomemudou
-
     def setforça(self,forçamudou):
         self.força=forçamudou
 
-    def setPosição_x(self,posição_xmudou):
-        self.posição_x=posição_xmudou
-
-    def setPosição_y(self,posição_ymudou):
-        self.posição_y=posição_ymudou
-    
-    def getNome(self):
-        return self.nome
-
-    def getForça(self):
-        return self.força
-
-    def getPosição_x(self):
-        return self.posição_x
-
-    def getPosição_y(self):
-        return self.posição_y
-
 class Galinha (Animal):#subclasse
-    def __init__ (self,nome,força,posição_x,posição_y,raça):
-        super(). __init__ (nome,força,posição_x,posição_y) 
-        self.raça=str(raça)
-    def guinchar (self):#metodo
-        print(f'O',self.Nome,'está guinchando!')
-    def getRaça(self):
-        return self.raça
-    def setRaça(self,Raçamudou):
-        self.raça=Raçamudou  
+    def __init__ (self,nome,força,posição_x,posição_y):
+        super(). __init__ (nome,força,posição_x,posição_y)      
 class Gato (Animal):#subclasse
-    def __init__ (self,nome,força,posição_x,posição_y,raça):
+    def __init__ (self,nome,força,posição_x,posição_y):
         super(). __init__ (nome,força,posição_x,posição_y)
-        self.raça= str(raça)
-    def miar (self):#metodo
-        print(f'O',self.Nome,'está miando!')
-    def getRaça(self):
-        return self.raça
-    def setRaça(self,Raçamudou):
-        self.raça=Raçamudou  
 class Cachorro (Animal):#subclasse
-    def __init__ (self,nome,força,posição_x,posição_y,raça):
+    def __init__ (self,nome,força,posição_x,posição_y):
         super(). __init__ (nome,força,posição_x,posição_y)
-        self.raça= str(raça)
-    def latir (self):#metodo
-        print(f'O',self.Nome,'está latindo!')
-    def getRaça(self):
-        return self.raça
-    def setRaça(self,Raçamudou):
-        self.raça=Raçamudou
 class Vaca (Animal):#subclasse
-    def __init__ (self,nome,força,posição_x,posição_y,raça):
+    def __init__ (self,nome,força,posição_x,posição_y):
         super(). __init__ (nome,força,posição_x,posição_y)
-        self.raça= str(raça)
-    def mugir (self):#metodos
-        print(f'A',self.Nome,'está mugindo!')
-    def getRaça(self):
-        return self.raça
-    def setRaça(self,Raçamudou):
-        self.raça=Raçamudou    
 class Leao (Animal):#subclasse
-    def __init__ (self,nome,força,posição_x,posição_y,raça):
-        super(). __init__ (nome,força,posição_x,posição_y)
-        self.raça= str(raça)
-    def rugir (self): #metodos
-        print(f'O',self.nome,'está rugindo!')
-    def getRaça(self):
-         return self.raça
-    def setRaça(self,Raçamudou):
-        self.raça=Raçamudou   
+    def __init__ (self,nome,força,posição_x,posição_y):
+        super(). __init__ (nome,força,posição_x,posição_y) 
 class Raposo (Animal):#subclasse
-    def __init__ (self,nome,força,posição_x,posição_y,raça):
+    def __init__ (self,nome,força,posição_x,posição_y):
         super(). __init__ (nome,força,posição_x,posição_y)
-        self.raça= str(raça)
-    def uiva (self):#metodo
-        print(f'A',self.nome,'está uivando!')
-    def getRaça(self):
-        return self.raça
-    def setRaça(self,Raçamudou):
-        self.raça=Raçamudou
 class Doraa (Animal):
     def __init__ (self,nome,força,posição_x,posição_y):
         super(). __init__ (nome,força,posição_x,posição_y)
 class Botas (Animal):
-    def __init__ (self,nome,força,posição_x,posição_y,raça):
+    def __init__ (self,nome,força,posição_x,posição_y):
         super(). __init__ (nome,força,posição_x,posição_y) 
-        self.raça= str(raça)
-    def getRaça(self):
-            return self.raça
 
-    def setRaça(self,Raçamudou):
-            self.raça=Raçamudou 
 
 #Caracteristicas
-leao= Leao ('Leão Simba',50,250,125,'Leão Africano')
-vaca= Vaca ('Vaca Maggie',30,80,235,'Vaca Nelore')
-cachorro = Cachorro ('Dog Caramelo',15,313,18,'Dog Vira-lata')
-gato = Gato ('Gato Caua',10,140,340,'Gato Siâmes')
-galinha = Galinha ('Galinha Margarete',5,370,230,'Galinha Caipira')
-botas = Botas ('Botas',0,32,5,'Macaco Botas')
-raposo = Raposo ('Raposo',100,80,10,'Raposo')
+leao= Leao ('Leão Simba',50,250,125)
+vaca= Vaca ('Vaca Maggie',30,80,235)
+cachorro = Cachorro ('Dog Caramelo',15,313,18)
+gato = Gato ('Gato Caua',10,140,340)
+galinha = Galinha ('Galinha Margarete',5,370,230)
+botas = Botas ('Botas',0,32,5)
+raposo = Raposo ('Raposo',100,80,10,)
 dora = Doraa ('Dora',10,430,15)
-# porquinho= PorcoEspinho ('Porquinho José',2,50,25,410,340,'Porco espinho')
-
 
 import pygame
 pygame.init()
@@ -143,7 +73,6 @@ galinhaimagem = pygame.image.load('imagens_do_pygame/galinha.direita.png')
 gatoimagem = pygame.image.load('imagens_do_pygame/gato1.png')
 cachorroimagem = pygame.image.load('imagens_do_pygame/dog1.png')
 raposoimagem = pygame.image.load('imagens_do_pygame/raposo1.png')
-# porquinhoimagem = pygame.image.load('imagens_do_pygame/porquinho1.png')
 
 #posicoes dos animais 
 x=dora.posição_x
@@ -162,14 +91,9 @@ xdog=cachorro.posição_x
 ydog=cachorro.posição_y
 xraposo=raposo.posição_x
 yraposo=raposo.posição_y
-# xporquinho= randint (porquinho.posição_x,porquinho.posição_x2)
-# yporquinho = randint (porquinho.posição_y, porquinho.posição_y2)
-
-
 
 fonte=pygame.font.SysFont('Helvetica',40,True,False)
 fonte2=pygame.font.SysFont('Helvetica',20,True,False)
-
 
 
 mraposo = f'Força do {raposo.nome}:{raposo.força}'
@@ -406,7 +330,6 @@ while janelaaberta:
     janela.blit(gatoimagem,(xgato,ygato))
     janela.blit(cachorroimagem,(xdog,ydog))
     janela.blit(raposoimagem,(xraposo,yraposo))
-    # janela.blit(porquinhoimagem,(xporquinho,yporquinho))
     pygame.display.update()
 
 pygame.quit()

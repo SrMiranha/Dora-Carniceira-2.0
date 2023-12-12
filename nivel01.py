@@ -2,8 +2,7 @@ from tkinter import *
 import tkinter as tk
 
 
-def game_over():
-    import tela_game_over
+
 
     
 
@@ -167,7 +166,7 @@ while janelaaberta:
                 yporquinho=4000
                 ybotas=4000
                 doraimagem=pygame.image.load('imagens_do_pygame/dora6.png')
-                game_over()
+                
         
 
                 
@@ -195,7 +194,7 @@ while janelaaberta:
                 yporquinho=4000
                 ybotas=4000
                 doraimagem=pygame.image.load('imagens_do_pygame/dora6.png')
-                game_over()
+                
                 
 
                 #casos galinha       
@@ -222,7 +221,7 @@ while janelaaberta:
                 yporquinho=4000
                 ybotas=4000
                 doraimagem=pygame.image.load('imagens_do_pygame/dora6.png')
-                game_over()
+                
                 
 
             #casos gato
@@ -249,7 +248,7 @@ while janelaaberta:
                 yporquinho=4000
                 ybotas=4000
                 doraimagem=pygame.image.load('imagens_do_pygame/dora6.png') 
-                game_over()
+                
 
             #casos vaca
     if (x-80 < xvaca and y+80 > yvaca and y-80 < yvaca and y-80 < yvaca):
@@ -275,7 +274,7 @@ while janelaaberta:
                 yporquinho=4000
                 ybotas=4000
                 doraimagem=pygame.image.load('imagens_do_pygame/dora6.png')
-                game_over()
+                
                
 
             #casos doguinho 
@@ -302,7 +301,7 @@ while janelaaberta:
                 yporquinho=4000
                 ybotas=4000
                 doraimagem=pygame.image.load('imagens_do_pygame/dora6.png')
-                game_over()
+                
                 
                 
 

@@ -1,11 +1,6 @@
 from tkinter import *
 import tkinter as tk
 
-
-def game_over():
-    import tela_game_over
-
-
 class Animal:#superclasse
     def __init__ (self,nome,força,posição_x,posição_y):#atributos
         self.nome=str(nome)  #O nome em maiusculo é o nome da variavel (atributo)
@@ -95,7 +90,7 @@ galinhaimagem = pygame.image.load('imagens_do_pygame/galinha.direita.png')
 gatoimagem = pygame.image.load('imagens_do_pygame/gato1.png')
 cachorroimagem = pygame.image.load('imagens_do_pygame/dog1.png')
 raposoimagem = pygame.image.load('imagens_do_pygame/raposo1.png')
-#starimagem = pygame.image.load('imagens_do_pygame/estrelinha.png')
+starimagem = pygame.image.load('imagens_do_pygame/estrelinha.png')
 porquinhoimagem = pygame.image.load('imagens_do_pygame/porquinho1.png')
 
 #posicoes dos animais 
@@ -223,7 +218,7 @@ while janelaaberta:
                 y3estrelinha=4000
                 y4estrelinha=4000
                 doraimagem=pygame.image.load('imagens_do_pygame/dora6.png')
-                game_over()
+               
     #casos porquinho2
     if  (x-80 < x2porquinho and y+80 > y2porquinho and y-80 < y2porquinho):
         doraimagem= pygame.image.load('imagens_do_pygame/dora4.png')
@@ -251,7 +246,7 @@ while janelaaberta:
                 y3estrelinha=4000
                 y4estrelinha=4000
                 doraimagem=pygame.image.load('imagens_do_pygame/dora6.png')
-                game_over()
+               
     #casos raposo
     if (x-80 < xraposo and y+80 > yraposo and y-80 < yraposo):
         doraimagem= pygame.image.load('imagens_do_pygame/dora4.png')
@@ -282,7 +277,7 @@ while janelaaberta:
                 y3estrelinha=4000
                 y4estrelinha=4000
                 doraimagem=pygame.image.load('imagens_do_pygame/dora6.png')
-                game_over()
+                
         
 
                 
@@ -314,7 +309,8 @@ while janelaaberta:
                 y3estrelinha=4000
                 y4estrelinha=4000
                 doraimagem=pygame.image.load('imagens_do_pygame/dora6.png')
-                game_over()
+                
+                
                 
 
                 #casos galinha       
@@ -345,7 +341,8 @@ while janelaaberta:
                 y3estrelinha=4000
                 y4estrelinha=4000
                 doraimagem=pygame.image.load('imagens_do_pygame/dora6.png')
-                game_over()
+               
+               
                 
 
             #casos gato
@@ -376,7 +373,8 @@ while janelaaberta:
                 y3estrelinha=4000
                 y4estrelinha=4000
                 doraimagem=pygame.image.load('imagens_do_pygame/dora6.png') 
-                game_over()
+               
+               
 
             #casos vaca
     if (x-80 < xvaca and y+80 > yvaca and y-80 < yvaca and y-80 < yvaca):
@@ -406,7 +404,6 @@ while janelaaberta:
                 y3estrelinha=4000
                 y4estrelinha=4000
                 doraimagem=pygame.image.load('imagens_do_pygame/dora6.png')
-                game_over()
                
 
             #casos doguinho 
@@ -437,7 +434,7 @@ while janelaaberta:
                 y3estrelinha=4000
                 y4estrelinha=4000
                 doraimagem=pygame.image.load('imagens_do_pygame/dora6.png')
-                game_over()      
+                    
     
     
     if (x-30 < xestrelinha and x+30> xestrelinha and y+30 > yestrelinha and y-30 < yestrelinha):
@@ -490,10 +487,10 @@ while janelaaberta:
     janela.blit(cachorroimagem,(xdog,ydog))
     janela.blit(raposoimagem,(xraposo,yraposo))
 
-    # janela.blit(starimagem,(xestrelinha,yestrelinha))
-    # janela.blit(starimagem,(x2estrelinha,y2estrelinha))
-    # janela.blit(starimagem,(x3estrelinha,y3estrelinha))
-    # janela.blit(starimagem,(x4estrelinha,y4estrelinha))
+    janela.blit(starimagem,(xestrelinha,yestrelinha))
+    janela.blit(starimagem,(x2estrelinha,y2estrelinha))
+    janela.blit(starimagem,(x3estrelinha,y3estrelinha))
+    janela.blit(starimagem,(x4estrelinha,y4estrelinha))
     
     janela.blit(porquinhoimagem,(xporquinho,yporquinho))
     janela.blit(porquinhoimagem,(x2porquinho,y2porquinho))

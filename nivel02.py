@@ -212,6 +212,7 @@ while janelaaberta:
                 ygato=4000
                 ydog=4000
                 yporquinho=4000
+                y2porquinho=4000
                 ybotas=4000
                 yestrelinha=4000
                 y2estrelinha=4000
@@ -240,6 +241,7 @@ while janelaaberta:
                 ygato=4000
                 ydog=4000
                 yporquinho=4000
+                y2porquinho=4000
                 ybotas=4000
                 yestrelinha=4000
                 y2estrelinha=4000
@@ -271,6 +273,7 @@ while janelaaberta:
                 ygato=4000
                 ydog=4000
                 yporquinho=4000
+                y2porquinho=4000
                 ybotas=4000
                 yestrelinha=4000
                 y2estrelinha=4000
@@ -303,6 +306,7 @@ while janelaaberta:
                 ygato=4000
                 ydog=4000
                 yporquinho=4000
+                y2porquinho=4000
                 ybotas=4000
                 yestrelinha=4000
                 y2estrelinha=4000
@@ -335,6 +339,7 @@ while janelaaberta:
                 ygato=4000
                 ydog=4000
                 yporquinho=4000
+                y2porquinho=4000
                 ybotas=4000
                 yestrelinha=4000
                 y2estrelinha=4000
@@ -367,6 +372,7 @@ while janelaaberta:
                 ygato=4000
                 ydog=4000
                 yporquinho=4000
+                y2porquinho=4000
                 ybotas=4000
                 yestrelinha=4000
                 y2estrelinha=4000
@@ -398,6 +404,7 @@ while janelaaberta:
                 ygato=4000
                 ydog=4000
                 yporquinho=4000
+                y2porquinho=4000
                 ybotas=4000
                 yestrelinha=4000
                 y2estrelinha=4000
@@ -428,6 +435,7 @@ while janelaaberta:
                 ygato=4000
                 ydog=4000
                 yporquinho=4000
+                y2porquinho=4000
                 ybotas=4000
                 yestrelinha=4000
                 y2estrelinha=4000
@@ -436,7 +444,7 @@ while janelaaberta:
                 doraimagem=pygame.image.load('imagens_do_pygame/dora6.png')
                     
     
-    
+    #pontos das estrelinhas
     if (x-30 < xestrelinha and x+30> xestrelinha and y+30 > yestrelinha and y-30 < yestrelinha):
                 yestrelinha=4000
                 print('Dora Ganhou')

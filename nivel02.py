@@ -57,6 +57,23 @@ class PorcoEspinho(Animal):
         super(). __init__ (nome,força,posição_x,posição_y)
         self.posição_x2=int(posição_x2)
         self.posição_y2=int(posição_y2)  
+class Espinho(Animal):
+     def __init__ (self,nome,força,posição_x,posição_y,posição_x2,posição_y2,posição_x3,posição_y3,posição_x4,posição_y4,posição_x5,posição_y5,posição_x6,posição_y6):
+        super(). __init__ (força,posição_x,posição_y,posição_x2,posição_y2,posição_x3,posição_y3,posição_x4,posição_y4,posição_x5,posição_y5,posição_x6,posição_y6)
+        self.posição_x2=int(posição_x2)
+        self.posição_y2=int(posição_y2)
+        self.posição_x3=int(posição_x3) 
+        self.posição_y3=int(posição_y3)
+        self.posição_x4=int(posição_x4) 
+        self.posição_y4=int(posição_y4)
+        self.posição_x5=int(posição_x5) 
+        self.posição_y5=int(posição_y5)
+        self.posição_x6=int(posição_x6) 
+        self.posição_y6=int(posição_y6)
+class Cow(Animal):
+    def __init__ (self,nome,força,posição_x,posição_y):
+        super(). __init__ (nome,força,posição_x,posição_y)
+
 
 #Caracteristicas
 leao= Leao ('Leão Simba',50,250,125)
@@ -67,9 +84,9 @@ galinha = Galinha ('Galinha Margarete',5,370,230)
 botas = Botas ('Botas',0,32,5)
 raposo = Raposo ('Raposo',100,80,10)
 dora = Doraa ('Dora',10,430,15)
-estrela = Estrelinha ('Dalva',5,215,400,45,300,390,200,103,100)
+estrela = Estrelinha ('Dalva',5,210,360,40,310,375,210,95,160)
 porquinho= PorcoEspinho ('Porquinho José',5,32,80,410,340)
-
+vaquinha = Cow ('Denny',0,5,45)
 
 import pygame
 pygame.init()
@@ -90,8 +107,9 @@ galinhaimagem = pygame.image.load('imagens_do_pygame/galinha.direita.png')
 gatoimagem = pygame.image.load('imagens_do_pygame/gato1.png')
 cachorroimagem = pygame.image.load('imagens_do_pygame/dog1.png')
 raposoimagem = pygame.image.load('imagens_do_pygame/raposo1.png')
-starimagem = pygame.image.load('imagens_do_pygame/estrelinha.png')
 porquinhoimagem = pygame.image.load('imagens_do_pygame/porquinho1.png')
+starimagem = pygame.image.load('imagens_do_pygame/estrelinha.png')
+vaquinhaimagem = pygame.image.load('imagens_do_pygame/vaquinha.png')
 
 #posicoes dos animais 
 x=dora.posição_x
@@ -110,10 +128,8 @@ xdog=cachorro.posição_x
 ydog=cachorro.posição_y
 xraposo=raposo.posição_x
 yraposo=raposo.posição_y
-
-
-# posição da estrela
-
+xvaquinha=vaquinha.posição_x
+yvaquinha=vaquinha.posição_y
 xestrelinha= estrela.posição_x
 yestrelinha = estrela.posição_y
 x2estrelinha= estrela.posição_x2
@@ -122,6 +138,9 @@ x3estrelinha= estrela.posição_x3
 y3estrelinha = estrela.posição_y3
 x4estrelinha= estrela.posição_x4
 y4estrelinha = estrela.posição_y4
+xvaquinha = vaquinha.posição_x
+yvaquinha = vaquinha.posição_y
+
 
 #posição porquinho
 xporquinho= porquinho.posição_x
@@ -129,13 +148,12 @@ yporquinho= porquinho.posição_y
 x2porquinho= porquinho.posição_x2
 y2porquinho= porquinho.posição_y2
 
-#texto de força
-#fonte
+
+#fontes de texto
 fonte=pygame.font.SysFont('Helvetica',40,True,False)
 fonte2=pygame.font.SysFont('Helvetica',20,True,False)
 
-#textos
-
+#textos das forças
 mraposo = f'Força do {raposo.nome}:{raposo.força}'
 textraposo = fonte2.render(mraposo, True,(255,255,255))
 
@@ -219,7 +237,6 @@ while janelaaberta:
                 y3estrelinha=4000
                 y4estrelinha=4000
                 doraimagem=pygame.image.load('imagens_do_pygame/dora6.png')
-               
     #casos porquinho2
     if  (x-80 < x2porquinho and y+80 > y2porquinho and y-80 < y2porquinho):
         doraimagem= pygame.image.load('imagens_do_pygame/dora4.png')
@@ -248,8 +265,8 @@ while janelaaberta:
                 y3estrelinha=4000
                 y4estrelinha=4000
                 doraimagem=pygame.image.load('imagens_do_pygame/dora6.png')
-               
-    #casos raposo
+                
+            #casos raposo
     if (x-80 < xraposo and y+80 > yraposo and y-80 < yraposo):
         doraimagem= pygame.image.load('imagens_do_pygame/dora4.png')
         if (x-60 < xraposo and y+60 > yraposo and y-40 < yraposo):
@@ -315,7 +332,6 @@ while janelaaberta:
                 doraimagem=pygame.image.load('imagens_do_pygame/dora6.png')
                 
                 
-                
 
                 #casos galinha       
     if (x-80 < xgalinha and y+80 > ygalinha and y-80 < ygalinha and y-80 < ygalinha):
@@ -346,8 +362,7 @@ while janelaaberta:
                 y3estrelinha=4000
                 y4estrelinha=4000
                 doraimagem=pygame.image.load('imagens_do_pygame/dora6.png')
-               
-               
+                
                 
 
             #casos gato
@@ -379,8 +394,7 @@ while janelaaberta:
                 y3estrelinha=4000
                 y4estrelinha=4000
                 doraimagem=pygame.image.load('imagens_do_pygame/dora6.png') 
-               
-               
+                
 
             #casos vaca
     if (x-80 < xvaca and y+80 > yvaca and y-80 < yvaca and y-80 < yvaca):
@@ -411,6 +425,7 @@ while janelaaberta:
                 y3estrelinha=4000
                 y4estrelinha=4000
                 doraimagem=pygame.image.load('imagens_do_pygame/dora6.png')
+                
                
 
             #casos doguinho 
@@ -442,9 +457,9 @@ while janelaaberta:
                 y3estrelinha=4000
                 y4estrelinha=4000
                 doraimagem=pygame.image.load('imagens_do_pygame/dora6.png')
-                    
+                      
     
-    #pontos das estrelinhas
+            #eestrelinhas
     if (x-30 < xestrelinha and x+30> xestrelinha and y+30 > yestrelinha and y-30 < yestrelinha):
                 yestrelinha=4000
                 print('Dora Ganhou')
@@ -494,6 +509,7 @@ while janelaaberta:
     janela.blit(gatoimagem,(xgato,ygato))
     janela.blit(cachorroimagem,(xdog,ydog))
     janela.blit(raposoimagem,(xraposo,yraposo))
+    janela.blit(vaquinhaimagem,(xvaquinha,yvaquinha))
 
     janela.blit(starimagem,(xestrelinha,yestrelinha))
     janela.blit(starimagem,(x2estrelinha,y2estrelinha))

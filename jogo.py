@@ -20,6 +20,7 @@ class configuração():
 def janela02():
     import niveis
     root.destroy()
+
     #iamgem do botao voltar
     imagem_voltar = PhotoImage(file='imagens_do_tkinter/botao menu.png', master=niveis.root2)
     imagem_voltar= imagem_voltar.subsample(1,1)

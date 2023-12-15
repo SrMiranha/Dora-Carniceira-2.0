@@ -31,7 +31,6 @@ imagem_niveis = PhotoImage( file="imagens_do_tkinter/niveis.png", master=root2)
 imagem__niveis = Label(root2, image=imagem_niveis).pack()
   
 #botao nivel 1
-
 imagem_start1 = PhotoImage(file='imagens_do_tkinter/start.png',master=root2)
 imagem_start1 = imagem_start1.subsample(1,1)
 botao_start1 = Label(root2, image=imagem_start1)

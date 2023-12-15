@@ -1,11 +1,6 @@
 from tkinter import *
 import tkinter as tk
-
-
-
-
-    
-
+import Telas
 class Animal:#superclasse
     def __init__ (self,nome,força,posição_x,posição_y):#atributos
         self.nome=str(nome)  #O nome em maiusculo é o nome da variavel (atributo)
@@ -136,11 +131,7 @@ while janelaaberta:
     if comandos[pygame.K_LEFT]and x>=50:  #esquerda
         x=x-56.25
     
-
-
         #casos raposo
-    
-    
     if (x-80 < xraposo and y+80 > yraposo and y-80 < yraposo):
         doraimagem= pygame.image.load('imagens_do_pygame/dora4.png')
         if (x-60 < xraposo and y+60 > yraposo and y-40 < yraposo):
@@ -166,7 +157,7 @@ while janelaaberta:
                 yporquinho=4000
                 ybotas=4000
                 doraimagem=pygame.image.load('imagens_do_pygame/dora6.png')
-                
+        
         
 
                 
@@ -195,7 +186,6 @@ while janelaaberta:
                 ybotas=4000
                 doraimagem=pygame.image.load('imagens_do_pygame/dora6.png')
                 
-                
 
                 #casos galinha       
     if (x-80 < xgalinha and y+80 > ygalinha and y-80 < ygalinha and y-80 < ygalinha):
@@ -221,7 +211,7 @@ while janelaaberta:
                 yporquinho=4000
                 ybotas=4000
                 doraimagem=pygame.image.load('imagens_do_pygame/dora6.png')
-                
+               
                 
 
             #casos gato
@@ -249,7 +239,6 @@ while janelaaberta:
                 ybotas=4000
                 doraimagem=pygame.image.load('imagens_do_pygame/dora6.png') 
                 
-
             #casos vaca
     if (x-80 < xvaca and y+80 > yvaca and y-80 < yvaca and y-80 < yvaca):
         doraimagem= pygame.image.load('imagens_do_pygame/dora4.png')
@@ -302,13 +291,6 @@ while janelaaberta:
                 ybotas=4000
                 doraimagem=pygame.image.load('imagens_do_pygame/dora6.png')
                 
-                
-                
-
-
-
-
-    
     #textos
     janela.blit(fundo,(0,0))
     janela.blit(texto_formatado,(600,40))
@@ -318,7 +300,6 @@ while janelaaberta:
     janela.blit(textvaca,(600,220))
     janela.blit(textdog,(600,260))
     janela.blit(textgalinha,(600,300))
-
 
     #imagens
     janela.blit(doraimagem,(x,y))
@@ -333,3 +314,4 @@ while janelaaberta:
 
 pygame.quit()
 
+   

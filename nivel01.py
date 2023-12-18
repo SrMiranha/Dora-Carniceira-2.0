@@ -1,6 +1,3 @@
-from tkinter import *
-import tkinter as tk
-import Telas
 class Animal:#superclasse
     def __init__ (self,nome,força,posição_x,posição_y):#atributos
         self.nome=str(nome)  #O nome em maiusculo é o nome da variavel (atributo)
@@ -138,7 +135,6 @@ while janelaaberta:
             if dora.força >= raposo.força:
                 yraposo=4000
                 yporquinho=4000
-                print('Dora Ganhou')
                 doraimagem= pygame.image.load('imagens_do_pygame/dora5.png')
                 dora.setforça(dora.força+raposo.força)
                 raposo.setforça(raposo.força-raposo.força)
@@ -147,7 +143,6 @@ while janelaaberta:
             elif dora.força<=raposo.força:
                 dora.setforça(dora.força-dora.força)
                 pontos=dora.força
-                print('Dora Morreu!')
                 yleao=4000
                 ygalinha=4000
                 yvaca=4000
@@ -167,7 +162,6 @@ while janelaaberta:
         if (x-40 < xleao and x+40> xleao and y+40 > yleao and y-40 < yleao):
             if dora.força >= leao.força:
                 yleao=4000
-                print('Dora Ganhou')
                 dora.setforça(dora.força+leao.força)
                 leao.setforça(leao.força-leao.força)
                 pontos=dora.força
@@ -175,7 +169,6 @@ while janelaaberta:
             elif dora.força<=leao.força:
                 dora.setforça(dora.força-dora.força)
                 pontos=dora.força
-                print('Dora Morreu!')
                 yleao=4000
                 ygalinha=4000
                 yvaca=4000
@@ -193,7 +186,6 @@ while janelaaberta:
         if (x-40 < xgalinha and x+40> xgalinha and y+40 > ygalinha and y-40 < ygalinha):
             if dora.força >= galinha.força:
                 ygalinha=4000
-                print('Dora Ganhou')
                 dora.setforça(dora.força+galinha.força)
                 galinha.setforça(galinha.força-galinha.força)
                 pontos=dora.força
@@ -201,7 +193,6 @@ while janelaaberta:
             elif dora.força<=galinha.força:
                 dora.setforça(dora.força-dora.força)
                 pontos=dora.força
-                print('Dora Morreu!')
                 yleao=4000
                 ygalinha=4000
                 yvaca=4000
@@ -220,7 +211,6 @@ while janelaaberta:
         if (x-20 < xgato and x+20> xgato and y+20 > ygato and y-20 < ygato):
             if dora.força >= gato.força:
                 ygato=4000
-                print('Dora Ganhou')
                 dora.setforça(dora.força+gato.força)
                 gato.setforça(gato.força-gato.força)
                 pontos=dora.força
@@ -228,7 +218,6 @@ while janelaaberta:
             elif dora.força<=gato.força:
                 dora.setforça(dora.força-dora.força)
                 pontos=dora.força
-                print('Dora Morreu!')
                 yleao=4000
                 ygalinha=4000
                 yvaca=4000
@@ -245,7 +234,6 @@ while janelaaberta:
         if (x-20 < xvaca and x+20> xvaca and y+20 > yvaca and y-20 < yvaca):
             if dora.força >= vaca.força:
                 yvaca=4000
-                print('Dora Ganhou')
                 dora.setforça(dora.força+vaca.força)
                 vaca.setforça(vaca.força-vaca.força)
                 pontos=dora.força
@@ -253,7 +241,6 @@ while janelaaberta:
             elif dora.força<=vaca.força:
                 dora.setforça(dora.força-dora.força)
                 pontos=dora.força
-                print('Dora Morreu!')
                 yleao=4000
                 ygalinha=4000
                 yvaca=4000
@@ -272,7 +259,6 @@ while janelaaberta:
         if (x-20 < xdog and x+20> xdog and y+20 > ydog and y-20 < ydog):
             if dora.força >= cachorro.força:
                 ydog=4000
-                print('Dora Ganhou')
                 dora.setforça(dora.força+cachorro.força)
                 cachorro.setforça(cachorro.força-cachorro.força)
                 pontos=dora.força
@@ -280,7 +266,6 @@ while janelaaberta:
             elif dora.força<=cachorro.força:
                 dora.setforça(dora.força-dora.força)
                 pontos=dora.força
-                print('Dora Morreu!')
                 yleao=4000
                 ygalinha=4000
                 yvaca=4000

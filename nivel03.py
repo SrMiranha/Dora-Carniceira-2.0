@@ -1,7 +1,3 @@
-from tkinter import *
-import tkinter as tk
- 
- #COLOCAR A VACA E OS ESPINHOS
 class Animal:#superclasse
     def __init__ (self,nome,força,posição_x,posição_y):#atributos
         self.nome=str(nome)  #O nome em maiusculo é o nome da variavel (atributo)
@@ -78,15 +74,15 @@ class Cow(Animal):
 
 #Caracteristicas
 leao= Leao ('Leão Simba',50,250,125)
-vaca= Vaca ('Vaca Maggie',30,80,235)
+vaca= Vaca ('Vaca Maggie',25,80,235)
 cachorro = Cachorro ('Dog Caramelo',15,313,18)
 gato = Gato ('Gato Caua',10,140,340)
-galinha = Galinha ('Galinha Margarete',5,370,230)
+galinha = Galinha ('Galinha Margarete',5,370,225)
 botas = Botas ('Botas',0,32,5)
 raposo = Raposo ('Raposo',100,80,10)
-dora = Doraa ('Dora',10,430,15)
-estrela = Estrelinha ('Dalva',5,210,360,40,310,375,210,95,160)#a ultima(ex4) e a penultima (ex3) sao a da galinha e gato, 1 é a sozminah
-porquinho= PorcoEspinho ('Porquinho José',5,32,80,410,340)
+dora = Doraa ('Dora',10,425,15)
+estrela = Estrelinha ('Estrelinha Dalva',5,150,360,40,60,205,260,95,160)
+porquinho= PorcoEspinho ('Porquinho José',10,32,80,410,340)
 vaquinha = Cow ('Denny',0,32,80)
 
 import pygame
@@ -151,23 +147,29 @@ fonte=pygame.font.SysFont('Helvetica',40,True,False)
 fonte2=pygame.font.SysFont('Helvetica',20,True,False)
 
 #textos de forças
-mraposo = f'Força do {raposo.nome}:{raposo.força}'
+mraposo = f'Força do {raposo.nome}: {raposo.força}'
 textraposo = fonte2.render(mraposo, True,(255,255,255))
 
-mgato = f'Força do {gato.nome}:{gato.força}'
+mgato = f'Força do {gato.nome}: {gato.força}'
 textgato = fonte2.render(mgato, True,(255,255,255))
 
-mvaca = f'Força da {vaca.nome}:{vaca.força}'
+mvaca = f'Força da {vaca.nome}: {vaca.força}'
 textvaca = fonte2.render(mvaca, True,(255,255,255))
 
-mdog = f'Força do {cachorro.nome}:{cachorro.força}'
+mdog = f'Força do {cachorro.nome}: {cachorro.força}'
 textdog = fonte2.render(mdog, True,(255,255,255))
 
-mleao = f'Força do {leao.nome}:{leao.força}'
+mleao = f'Força do {leao.nome}: {leao.força}'
 textleao = fonte2.render(mleao, True,(255,255,255))
 
-mgalinha = f'Força da {galinha.nome}:{galinha.força}'
+mgalinha = f'Força da {galinha.nome}: {galinha.força}'
 textgalinha = fonte2.render(mgalinha, True,(255,255,255))
+
+mporquinho = f'Força do {porquinho.nome}: -{porquinho.força}'
+textporquinho = fonte2.render(mporquinho, True,(255,255,255))
+
+mestrela = f'Força da {estrela.nome}: +{estrela.força}'
+textestrela = fonte2.render(mestrela, True,(255,255,255))
 
 
 pontos=dora.força
@@ -196,30 +198,26 @@ while janelaaberta:
     if xporquinho < 0 or xporquinho > 410:
         velocidade_porquinho = -velocidade_porquinho
         xporquinho = 50
-
     xporquinho += velocidade_porquinho
+
     #porquinho2
     if x2porquinho < 0 or x2porquinho >410:
         velocidade_porquinho = -velocidade_porquinho
         x2porquinho = 40
-
     x2porquinho += velocidade_porquinho
     
 
-    #casos porquinho1
+    
     if  (x-80 < xporquinho and y+80 > yporquinho and y-80 < yporquinho):
         doraimagem= pygame.image.load('imagens_do_pygame/dora4.png')
-        if (x-40 < xporquinho and x+40> xporquinho and y+40 > yporquinho and y-40 < yporquinho):
-            if dora.força >= porquinho.força:
-                yporquinho=4000
-                print('Dora Ganhou')
+        if (x-20 < xporquinho and x+20> xporquinho and y+20 > yporquinho and y-20 < yporquinho):
+            if dora.força >= porquinho.força:  
                 dora.setforça(dora.força-porquinho.força)
                 pontos=dora.força
                 doraimagem = pygame.image.load('imagens_do_pygame/dora.sem.fundo.png')
             elif dora.força<=porquinho.força:
                 dora.setforça(dora.força-dora.força)
                 pontos=dora.força
-                print('Dora Morreu!')
                 yleao=4000
                 ygalinha=4000
                 yvaca=4000
@@ -234,20 +232,16 @@ while janelaaberta:
                 y3estrelinha=4000
                 y4estrelinha=4000
                 doraimagem=pygame.image.load('imagens_do_pygame/dora6.png')
-    #casos porquinho2
     if  (x-80 < x2porquinho and y+80 > y2porquinho and y-80 < y2porquinho):
         doraimagem= pygame.image.load('imagens_do_pygame/dora4.png')
-        if (x-40 < x2porquinho and x+40> x2porquinho and y+40 > y2porquinho and y-40 < y2porquinho):
+        if (x-20 < x2porquinho and x+20> x2porquinho and y+20 > y2porquinho and y-20 < y2porquinho):
             if dora.força >= porquinho.força:
-                y2porquinho=4000
-                print('Dora Ganhou')
                 dora.setforça(dora.força-porquinho.força)
                 pontos=dora.força
                 doraimagem = pygame.image.load('imagens_do_pygame/dora.sem.fundo.png')
             elif dora.força<=porquinho.força:
                 dora.setforça(dora.força-dora.força)
                 pontos=dora.força
-                print('Dora Morreu!')
                 yleao=4000
                 ygalinha=4000
                 yvaca=4000
@@ -264,22 +258,61 @@ while janelaaberta:
                 doraimagem=pygame.image.load('imagens_do_pygame/dora6.png')
                 
                 #casos raposo
+    
+    if  (x-80 < xestrelinha and y+80 > yestrelinha and y-80 < yestrelinha):
+        doraimagem= pygame.image.load('imagens_do_pygame/dora4.png')
+        if (x-60 < xestrelinha and x+60> xestrelinha and y+60 > yestrelinha and y-60 < yestrelinha):
+            yestrelinha=4000
+            dora.setforça(dora.força+estrela.força)
+            pontos=dora.força
+            doraimagem = pygame.image.load('imagens_do_pygame/dora.sem.fundo.png')
+    if  (x-80 < x2estrelinha and y+80 > y2estrelinha and y-80 < y2estrelinha):
+        doraimagem= pygame.image.load('imagens_do_pygame/dora4.png')
+        if (x-60 < x2estrelinha and x+60> x2estrelinha and y+60 > y2estrelinha and y-60 < y2estrelinha):
+            y2estrelinha=4000
+            dora.setforça(dora.força+estrela.força)
+            pontos=dora.força
+            doraimagem = pygame.image.load('imagens_do_pygame/dora.sem.fundo.png')
+    if  (x-80 < x3estrelinha and y+80 > y3estrelinha and y-80 < y3estrelinha):
+        doraimagem= pygame.image.load('imagens_do_pygame/dora4.png')
+        if (x-60 < x3estrelinha and x+60> x3estrelinha and y+60 > y3estrelinha and y-60 < y3estrelinha):
+            y3estrelinha=4000
+            dora.setforça(dora.força+estrela.força)
+            pontos=dora.força
+            doraimagem = pygame.image.load('imagens_do_pygame/dora.sem.fundo.png')
+    if  (x-80 < x4estrelinha and y+80 > y4estrelinha and y-80 < y4estrelinha):
+        doraimagem= pygame.image.load('imagens_do_pygame/dora4.png')
+        if (x-60 < x4estrelinha and x+60> x4estrelinha and y+60 > y4estrelinha and y-60 < y4estrelinha):
+            y4estrelinha=4000
+            dora.setforça(dora.força+estrela.força)
+            pontos=dora.força
+            doraimagem = pygame.image.load('imagens_do_pygame/dora.sem.fundo.png')
+
     if (x-80 < xraposo and y+80 > yraposo and y-80 < yraposo):
         doraimagem= pygame.image.load('imagens_do_pygame/dora4.png')
         if (x-60 < xraposo and y+60 > yraposo and y-40 < yraposo):
             if dora.força >= raposo.força:
                 yraposo=4000
                 yporquinho=4000
-                print('Dora Ganhou')
                 doraimagem= pygame.image.load('imagens_do_pygame/dora5.png')
                 dora.setforça(dora.força+raposo.força)
                 raposo.setforça(raposo.força-raposo.força)
                 pontos=dora.força
-
+                yleao=4000
+                ygalinha=4000
+                yvaca=4000
+                yraposo=4000
+                ygato=4000
+                ydog=4000
+                yporquinho=4000
+                y2porquinho=4000
+                yestrelinha=4000
+                y2estrelinha=4000
+                y3estrelinha=4000
+                y4estrelinha=4000
             elif dora.força<=raposo.força:
                 dora.setforça(dora.força-dora.força)
                 pontos=dora.força
-                print('Dora Morreu!')
                 yleao=4000
                 ygalinha=4000
                 yvaca=4000
@@ -302,7 +335,6 @@ while janelaaberta:
         if (x-40 < xleao and x+40> xleao and y+40 > yleao and y-40 < yleao):
             if dora.força >= leao.força:
                 yleao=4000
-                print('Dora Ganhou')
                 dora.setforça(dora.força+leao.força)
                 leao.setforça(leao.força-leao.força)
                 pontos=dora.força
@@ -310,7 +342,6 @@ while janelaaberta:
             elif dora.força<=leao.força:
                 dora.setforça(dora.força-dora.força)
                 pontos=dora.força
-                print('Dora Morreu!')
                 yleao=4000
                 ygalinha=4000
                 yvaca=4000
@@ -331,7 +362,6 @@ while janelaaberta:
         if (x-40 < xgalinha and x+40> xgalinha and y+40 > ygalinha and y-40 < ygalinha):
             if dora.força >= galinha.força:
                 ygalinha=4000
-                print('Dora Ganhou')
                 dora.setforça(dora.força+galinha.força)
                 galinha.setforça(galinha.força-galinha.força)
                 pontos=dora.força
@@ -339,7 +369,6 @@ while janelaaberta:
             elif dora.força<=galinha.força:
                 dora.setforça(dora.força-dora.força)
                 pontos=dora.força
-                print('Dora Morreu!')
                 yleao=4000
                 ygalinha=4000
                 yvaca=4000
@@ -362,7 +391,6 @@ while janelaaberta:
         if (x-20 < xgato and x+20> xgato and y+20 > ygato and y-20 < ygato):
             if dora.força >= gato.força:
                 ygato=4000
-                print('Dora Ganhou')
                 dora.setforça(dora.força+gato.força)
                 gato.setforça(gato.força-gato.força)
                 pontos=dora.força
@@ -370,7 +398,6 @@ while janelaaberta:
             elif dora.força<=gato.força:
                 dora.setforça(dora.força-dora.força)
                 pontos=dora.força
-                print('Dora Morreu!')
                 yleao=4000
                 ygalinha=4000
                 yvaca=4000
@@ -393,7 +420,6 @@ while janelaaberta:
         if (x-20 < xvaca and x+20> xvaca and y+20 > yvaca and y-20 < yvaca):
             if dora.força >= vaca.força:
                 yvaca=4000
-                print('Dora Ganhou')
                 dora.setforça(dora.força+vaca.força)
                 vaca.setforça(vaca.força-vaca.força)
                 pontos=dora.força
@@ -401,7 +427,6 @@ while janelaaberta:
             elif dora.força<=vaca.força:
                 dora.setforça(dora.força-dora.força)
                 pontos=dora.força
-                print('Dora Morreu!')
                 yleao=4000
                 ygalinha=4000
                 yvaca=4000
@@ -425,7 +450,6 @@ while janelaaberta:
         if (x-20 < xdog and x+20> xdog and y+20 > ydog and y-20 < ydog):
             if dora.força >= cachorro.força:
                 ydog=4000
-                print('Dora Ganhou')
                 dora.setforça(dora.força+cachorro.força)
                 cachorro.setforça(cachorro.força-cachorro.força)
                 pontos=dora.força
@@ -433,7 +457,6 @@ while janelaaberta:
             elif dora.força<=cachorro.força:
                 dora.setforça(dora.força-dora.força)
                 pontos=dora.força
-                print('Dora Morreu!')
                 yleao=4000
                 ygalinha=4000
                 yvaca=4000
@@ -451,30 +474,8 @@ while janelaaberta:
                       
     
                 #ganhos de estrelas
-    if (x-30 < xestrelinha and x+30> xestrelinha and y+30 > yestrelinha and y-30 < yestrelinha):
-                yestrelinha=4000
-                print('Dora Ganhou')                                    #certo
-                dora.setforça(dora.força+estrela.força)
-                estrela.setforça(estrela.força-estrela.força)
-                estrela.setforça(estrela.força+5)
-                pontos=dora.força 
-    if (x-60 < x2estrelinha and x+60> x2estrelinha and y+60 > y2estrelinha and y-60 < y2estrelinha):
-                y2estrelinha=4000
-                print('Dora Ganhou')
-                dora.setforça(dora.força+estrela.força)
-                estrela.setforça(estrela.força-estrela.força)   
-                estrela.setforça(estrela.força+5)
-                pontos=dora.força          
-    if (x-30 < x3estrelinha and x+30> x3estrelinha and y+30 > y3estrelinha and y-30 < y3estrelinha):
-                y3estrelinha=4000
-                print('Dora Ganhou')
-                dora.setforça(dora.força+estrela.força)
-                estrela.setforça(estrela.força-estrela.força)
-                estrela.setforça(estrela.força+5)
-                pontos=dora.força
-    if (x-35 < x4estrelinha and x+35> x4estrelinha and y+35 > y4estrelinha and y-35 < y4estrelinha):
+   
                 y4estrelinha=4000
-                print('Dora Ganhou')
                 dora.setforça(dora.força+estrela.força)
                 estrela.setforça(estrela.força-estrela.força)
                 estrela.setforça(estrela.força+5)
@@ -489,6 +490,8 @@ while janelaaberta:
     janela.blit(textvaca,(600,220))
     janela.blit(textdog,(600,260))
     janela.blit(textgalinha,(600,300))
+    janela.blit(textporquinho,(600,340))
+    janela.blit(textestrela,(600,380))
 
 
     #imagens
